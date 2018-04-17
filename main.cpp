@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+//Author Xinrui Li
 using namespace std;
 
 const int MAX_PERIODS = 10;
@@ -12,7 +12,7 @@ int main()
 {
   int periods;
   int teams;
-
+  vector<vector<int> > record;
   cout<<"How many competitors? ";
   cin>>teams;
   cout<<"How many scoring periods? ";
@@ -28,8 +28,26 @@ int main()
   else
   {
    //make scoreboard and fill it with zeros
-  
+    for(int i = 0; i < teams; i++)
+    {
+      vector<int> arr;
+      for(int j =0; j < periods; j++)
+      {
+        arr.push_back(0);
+      }
+      record.push_back(arr);
+    }  
    //once created, display the scoreboard
+   cout<<"SCOREBOARD"<<endl;
+   for(int i = 0; i < teams; i++)
+   {
+     cout<<"Player "<<i + 1<<": ";
+     for(int j = 0; j < periods;j++)
+     {
+       cout<<record[i][j]<<"|";
+     }
+     cout<<endl;
+   }  
   }
   return 0;
 }
